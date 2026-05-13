@@ -1,0 +1,35 @@
+[package]
+name = "daily-tracker"
+version = "0.1.0"
+edition = "2021"
+authors = ["You"]
+description = "一个用 Rust 编写的桌面端日常工作与行程记录应用，用于学习 Rust"
+license = "MIT"
+
+[dependencies]
+# 纯 Rust 的即时模式 GUI 框架
+eframe = { version = "0.28", default-features = false, features = [
+    "default_fonts",
+    "glow",
+    "persistence",
+] }
+egui = "0.28"
+
+# 序列化/反序列化（用于把数据存成 JSON）
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+# 时间处理
+chrono = { version = "0.4", features = ["serde"] }
+
+# 本地目录定位（跨平台获取应用数据目录）
+directories = "5"
+
+# 唯一 ID
+uuid = { version = "1", features = ["v4", "serde"] }
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+strip = true
