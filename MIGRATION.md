@@ -38,24 +38,17 @@ gh repo create jiangyo/daily-tracker --private \
   - `feat(daily-tracker): 初始化 Rust 桌面应用骨架 (eframe + egui)`
   - `docs(daily-tracker): 添加 49 天 / 每天 2 小时的 Rust 学习计划`
 
-在你本地任意空目录下执行：
+在你本地任意空目录下，**一行一行**地执行（注意：每条命令都是单行，不要带反斜杠续行符 `\`，否则在 Windows cmd / PowerShell 里会报 `fatal: repository '\' does not exist`）：
 
 ```bash
-# 把 anydoor 仓库里准备好的独立分支克隆下来
-git clone --single-branch --branch daily-tracker-standalone \
-    https://github.com/jiangyo/anydoor.git daily-tracker
-
+git clone --single-branch --branch daily-tracker-standalone https://github.com/jiangyo/anydoor.git daily-tracker
 cd daily-tracker
-
-# 把当前分支重命名为 master（或 main，按你新仓库默认分支的名字）
 git branch -M master
-
-# 把 remote 指向你刚创建的新仓库
 git remote set-url origin https://github.com/jiangyo/daily-tracker.git
-
-# 推上去
 git push -u origin master
 ```
+
+> 如果你的新仓库默认分支是 `main` 而不是 `master`，把上面两处 `master` 都改成 `main`。
 
 完成后，访问 https://github.com/jiangyo/daily-tracker 应该能看到完整的项目，并且根目录直接是 `Cargo.toml` / `src/` / `LEARNING_PLAN.md` 等。
 
