@@ -1,0 +1,21 @@
+{
+  "name": "anydoor",
+  "version": "1.0.0",
+  "description": "A simple static file server built with Node.js and Express",
+  "scripts": {
+    "dev": "ts-node --transpile-only staticServerNative.ts",
+    "start": "ts-node --transpile-only staticServer.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "express": "^4.21.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.0.0",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.22.3",
+    "typescript": "^5.6.0"
+  }
+}
